@@ -37,10 +37,6 @@ def salvar(nome):
 def pagina_html():
     return render_template('index.html')
 
-@app.route('/Historia')
-def historia():
-    return f'Essa é a hitória do Corinthians!'
-
 @app.route('/calcular/<nome>/<int:ano>')
 def calcular(nome, ano):
     ano_atual = datetime.now().year
@@ -48,6 +44,7 @@ def calcular(nome, ano):
 
     if idade > 18:
         status = 'Maior de Idade'
+
     else:
         status = 'Menor de Idade - ACESSO NEGADO'
 
